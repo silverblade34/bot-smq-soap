@@ -6,5 +6,7 @@ class BotControllerInicio:
         response = BotResponse()
         conec = consultasMysql()
         dataconn = conec.listAutentificaInicioOperacion()
-        data = response.respCodInicioOperacion(dataconn) 
-        return data
+        datamtc = response.respCodInicioOperacion(dataconn)
+        dataupdaterow = conec.actualizarCodigoInicioOperacion(datamtc, dataconn)
+        print(dataupdaterow)
+        return datamtc

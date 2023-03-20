@@ -4,9 +4,9 @@ import requests
 class BotResponse:
     def respCodInicioOperacion(self, dataconn):
         try:
-            CodEntidad= "EC000101"
-            CodIV="3N9KPI$YKXY29%3454OB"
-            CodLocal = "L000370"
+            CodEntidad= str(dataconn["CodEntidad"])
+            CodIV= str(dataconn["CodIV"])
+            CodLocal = str(dataconn["CodLocal"])
             responseAuOpe = self.AutentificaInicioOperacion(CodEntidad, CodIV, CodLocal)
             respdata = self.obtenerDataResponse(responseAuOpe)
             return respdata
